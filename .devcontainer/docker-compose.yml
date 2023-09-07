@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  env:
+    container_name: c-py
+    # image: c-py:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../:/workspace:consistent
+    restart: always
+    command: sleep infinity # cmd 명령어를 찾지 못해 죽는거 방지
+    # networks:
+    #   - bridge
+
+# networks:
+#   bridge:
+#     driver: bridge
