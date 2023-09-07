@@ -4,8 +4,7 @@ Python and C devcontainer Template
 ## Requirements
 - Docker
 - VSCode
-- VSCode Remote Container Extension
-
+- VSCode Dev Containers Extension
 
 ## Usage
 1. Clone this repository
@@ -15,3 +14,9 @@ Python and C devcontainer Template
 5. Wait for the container to build
 6. Open a terminal in VSCode
 7. Enjoy coding in Python and C
+
+
+## Notes
+- The container is based on the official Python image
+- The container is configured to use the latest version of Python 3
+- The container is configured to use the latest version of GCC

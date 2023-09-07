@@ -1,9 +1,15 @@
 {
-	"build": {
-		"dockerfile": "Dockerfile",
-	},
-	// "dockerComposeFile": "./docker-compose.yml",
-	// "workspaceFolder": "/workspace",
+	// ### Case: Directly using Dockerfile ###
+	// "build": {
+	// 	"dockerfile": "Dockerfile",
+	// },
+	
+	// ### Case: Using docker-compose.yml ###
+	"dockerComposeFile": "./docker-compose.yml",
+	"workspaceFolder": "/workspace",
+	"service": "dev",
+
+	// ### config extension ###
 	"customizations": {
 		"vscode": {
 			"extensions": [

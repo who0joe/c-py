@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  env:
+  dev:
     container_name: c-py
     # image: c-py:latest
     build:
