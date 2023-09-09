@@ -1,7 +1,7 @@
 # TO BUILD
 # > docker build -f .devcontainer/Dockerfile -t c-py .
 
-FROM python:3.11.5-bullseye
+FROM python:3.11.5-bookworm
 
 ############################################## TimeZone Config ##############################################
 
