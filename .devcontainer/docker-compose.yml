@@ -3,10 +3,10 @@ version: "3"
 services:
   dev:
     container_name: c-py
-    # image: c-py:latest
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: who0joe/c-py:latest
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
     volumes:
       - ../:/workspace:consistent
     restart: always
