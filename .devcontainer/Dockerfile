@@ -38,8 +38,10 @@ RUN install_c_kernel
 
 RUN git config --global core.ignorecase false; \
  	git config --global core.autocrlf true; \
-    git config --global pull.rebase false;
-    
+    git config --global pull.rebase false; \
+    git config --global user.email "rocenrol@naver.com"; \
+    git config --global user.name "Hooyoung"
+
 
 
 #@@@@@ Additonal Config @@@@@#
