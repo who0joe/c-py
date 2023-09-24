@@ -23,7 +23,8 @@ ENV PYTHONPATH "${PYTHONPATH}:/workspace"
 
 # Install Python packages
 RUN python -m pip install --upgrade pip \
-    && pip install ipykernel jupyter-c-kernel ipywidgets \
+    && pip install ipykernel ipywidgets \
+    jupyter_c_kernel \
     black \
     numpy pandas \
     psycopg2 \
