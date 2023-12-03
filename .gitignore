@@ -1,3 +1,13 @@
+############## C Object, CMake build folder ###############
+# CMake remove all under build/
+build/
+
+# gcc compiled file
+*.out
+*.o
+
+
+############## Python ###############
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

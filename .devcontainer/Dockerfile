@@ -1,7 +1,7 @@
 # TO BUILD
 # > docker build -f .devcontainer/Dockerfile -t who0joe/c-py .
 
-FROM python:3.11.5-bookworm
+FROM python:3.12.0-bookworm
 
 ############################################## TimeZone Config ##############################################
 
@@ -24,12 +24,7 @@ ENV PYTHONPATH "${PYTHONPATH}:/workspace"
 # Install Python packages
 RUN python -m pip install --upgrade pip \
     && pip install ipykernel ipywidgets \
-    jupyter_c_kernel \
-    black \
-    numpy pandas \
-    psycopg2 \
-	httpx websockets \
-    fastapi uvicorn uvloop ujson
+    jupyter_c_kernel 
 
 # Install C Kernel
 RUN install_c_kernel

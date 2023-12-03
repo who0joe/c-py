@@ -1,13 +1,14 @@
 {
-	// ### Case: Directly using Dockerfile ###
+
+	// ### CASE 1: Using docker-compose.yml ###
+	"dockerComposeFile": "./docker-compose.yml",
+	"workspaceFolder": "/workspace",
+	"service": "main",
+
+	// ### CASE 2: Using Directly Build from Dockerfile ###
 	// "build": {
 	// 	"dockerfile": "Dockerfile",
 	// },
-	
-	// ### Case: Using docker-compose.yml ###
-	"dockerComposeFile": "./docker-compose.yml",
-	"workspaceFolder": "/workspace",
-	"service": "dev",
 
 	// ### config extension ###
 	"customizations": {
@@ -15,20 +16,14 @@
 			"extensions": [
 				"ms-python.python",
 				"ms-toolsai.jupyter",
-				"PKief.material-icon-theme",
+				"ms-vscode.cpptools-extension-pack",
+				"ms-vscode.makefile-tools",
+				"ms-vscode.cmake-tools",
 				"mhutchie.git-graph",
-				"ms-vscode.cpptools-extension-pack"
+				"PKief.material-icon-theme",
 			]
 		},
-		"settings": {
-			// "dotenv.enableAutocloaking": false,
-			"python.formatting.provider": "black",
-			"python.formatting.blackArgs": [
-				"--line-length",
-				"100"
-			]
-		}
 	},
-	"postCreateCommand": "git config --global user.name ${localEnv:GIT_USER_NAME} && git config --global user.email '${localEnv:GIT_USER_EMAIL}'",
+"postCreateCommand": "git config --global user.name 'GIT_USER_NAME' && git config --global user.email 'GIT_USER_EMAIL'",
 	"shutdownAction": "stopCompose"
 }

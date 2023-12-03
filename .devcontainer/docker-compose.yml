@@ -1,19 +1,18 @@
 version: "3"
 
 services:
-  dev:
-    container_name: c-py
-    image: who0joe/c-py
+  main:
+    container_name: MyContainer # name of container
+    
+    ### CASE 1: pull from dockerhub
+    image: who0joe/c-py:latest
+
+    # ### CASE 2: build locally
     # build:
     #   context: .
     #   dockerfile: Dockerfile
+
     volumes:
       - ../:/workspace:consistent
     restart: always
-    command: sleep infinity # cmd 명령어를 찾지 못해 죽는거 방지
-    # networks:
-    #   - bridge
-
-# networks:
-#   bridge:
-#     driver: bridge
+    command: sleep infinity # keep container running
