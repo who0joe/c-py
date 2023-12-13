@@ -1,7 +1,15 @@
-# TO BUILD
-# > docker build -f .devcontainer/Dockerfile -t who0joe/c-py .
+### BASE IMAGE ####################################################################
+# python:3.12.1-bookworm (on buildpack-deps:bokworm, Debian GNU/Linux 12)
+# + c/cpp : gcc g++ cmake gdb
+# + python : pip jupyter-notebook black numpy pandas httpx websockets
+# + git
+##################################################################################
 
-FROM python:3.12.0-bookworm
+# TO BUILD
+# docker build -f .devcontainer/Dockerfile -t who0joe/c-py:latest .
+
+# python:latest (Date: 2021-12-13)
+FROM python:3.12.1-bookworm
 
 ############################################## TimeZone Config ##############################################
 
@@ -13,7 +21,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-    cmake \
+    cmake gdb \
     && rm -rf /var/lib/apt/lists/*
 
 ############################################## Python Config ##############################################
@@ -23,8 +31,10 @@ ENV PYTHONPATH "${PYTHONPATH}:/workspace"
 
 # Install Python packages
 RUN python -m pip install --upgrade pip \
-    && pip install ipykernel ipywidgets \
-    jupyter_c_kernel 
+    && pip install ipykernel jupyter-c-kernel ipywidgets \
+    black \
+    numpy pandas \
+    httpx websockets
 
 # Install C Kernel
 RUN install_c_kernel

@@ -40,12 +40,14 @@
 - [x] Jupyter Notebook Kernel for Python 3.12.0
 - [x] Jupyter Notebook Kernel for C (jupyter-c-kernel   1.2.2)
 - [x] git 2.39.2
-- [x] gcc 12.2.0
-- [x] g++ 12.2.0
+- [x] gcc (Debian 12.2.0-14) 12.2.0
+- [x] g++ (Debian 12.2.0-14) 12.2.0
 - [x] make 4.3
 - [x] cmake 3.25.1
+- [x] GNU gdb (Debian 13.1-3) 13.1
 - [x] Python 3.12.0
 - [x] pip 23.3.1
+
 
 
 ## **Docker Image**
