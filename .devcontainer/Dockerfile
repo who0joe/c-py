@@ -9,7 +9,7 @@
 # docker build -f .devcontainer/Dockerfile -t who0joe/c-py:latest .
 
 # python:latest (Date: 2021-12-13)
-FROM python:3.12.1-bookworm
+FROM python:3.12-bookworm
 
 ############################################## TimeZone Config ##############################################
 

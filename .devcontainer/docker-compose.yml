@@ -2,15 +2,16 @@ version: "3"
 
 services:
   main:
-    container_name: MyContainer # name of container
+    # name of container
+    container_name: CONTAINER_NAME
     
-    ### CASE 1: pull from dockerhub
-    image: who0joe/c-py:latest
+    # image name (Docker Hub)
+    image: who0joe/c-py:3.12-bookworm
 
-    # ### CASE 2: build locally
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile
+    # Build from Dockerfile
+    build:
+      context: .
+      dockerfile: Dockerfile
 
     volumes:
       - ../:/workspace:consistent
