@@ -1,0 +1,41 @@
+### BASE IMAGE ####################################################################
+# + OS : Rocky Linux 9
+# + c/cpp : gcc g++ make cmake gdb
+# + git
+###################################################################################
+
+### BUILD COMMAND #################################################################
+# docker build -f .devcontainer/Dockerfile -t who0joe/node-pm2:21-bookworm .
+###################################################################################
+
+FROM rockylinux:9
+
+##### Set the timezone to KST #####################################################
+ENV TZ=Asia/Seoul
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+##### Build-Essential Config #######################################################
+RUN yum install -y \
+    git \
+    gcc gcc-c++ kernel-devel make cmake gdb \
+    man-db \
+    ncurses-devel;
+
+# RUN dnf update; \
+#     dnf clean all -y; \
+#     rm -rf /var/cache/dnf; \
+#     dnf groupinstall "Development Tools" -y && \
+#     dnf install -y \
+#         git \
+
+##### Set the default bash profile ################################################
+# COPY .bash_profile /root/.bash_profile
+
+ENV alias cls='clear'
+ENV alias ll='ls -al'
+
+##### Git Config ##################################################################
+RUN git config --global core.ignorecase false; \
+ 	git config --global core.autocrlf true; \
+    git config --global pull.rebase false; 
+
