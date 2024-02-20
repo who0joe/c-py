@@ -6,23 +6,29 @@
 ##################################################################################
 
 # TO BUILD
-# docker build -f .devcontainer/Dockerfile -t who0joe/c-py:latest .
+# docker build -f .devcontainer/Dockerfile -t who0joe/c-py:3.12-bookworm .
 
 # python:latest (Date: 2021-12-13)
 FROM python:3.12-bookworm
 
 ############################################## TimeZone Config ##############################################
-
-# Set the timezone to KST
 ENV TZ=Asia/Seoul
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 ############################################## C Config ##############################################
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-    cmake gdb man-db \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        cmake \
+        gdb \
+        vim \
+        man-db \
+        manpages-dev \
+        glibc-doc && \
+    mandb && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
 
 ############################################## Python Config ##############################################
 
@@ -44,6 +50,9 @@ RUN install_c_kernel
 RUN git config --global core.ignorecase false; \
  	git config --global core.autocrlf true; \
     git config --global pull.rebase false; 
+
+############################################## Bash Config ##############################################
+COPY bashrc_wsl /root/.bashrc
 
 
 #@@@@@ Additonal Config @@@@@#
