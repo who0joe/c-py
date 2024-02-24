@@ -52,7 +52,7 @@ RUN git config --global core.ignorecase false; \
     git config --global pull.rebase false; 
 
 ############################################## Bash Config ##############################################
-COPY bashrc_wsl /root/.bashrc
+COPY bashrc_config /root/.bashrc
 
 
 #@@@@@ Additonal Config @@@@@#
