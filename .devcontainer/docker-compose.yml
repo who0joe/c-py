@@ -12,6 +12,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      # dockerfile: Dockerfile-rockylinux
 
     volumes:
       - ../:/workspace:consistent

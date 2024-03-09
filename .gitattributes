@@ -1,0 +1,5 @@
+# Prevent git from changing line endings
+# Affects .devcontainer/PostCreateCommand.sh and .devcontainer/PostCreateCommand.sh
+*.sh text eol=lf
+*.bash text eol=lf
+bashrc eol=lf
