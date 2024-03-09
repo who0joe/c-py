@@ -6,7 +6,7 @@
 ##################################################################################
 
 # TO BUILD
-# docker build -f .devcontainer/Dockerfile -t who0joe/c-py:3.12-bookworm .
+# docker build -f .devcontainer/Dockerfile -t who0joe/c-py:3.12-bookworm ./.devcontainer
 
 # python:latest (Date: 2021-12-13)
 FROM python:3.12-bookworm
